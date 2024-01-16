@@ -1,0 +1,14 @@
+<h1 class="text-center" id="title">MI MÚSICA</h1>
+<div *ngIf="musica.length != 0 ; else vacio">
+  <div *ngFor="let music of musica">
+    <div>{{music.id}}</div>
+    <div>{{music.description}}</div>
+  </div>
+</div>
+<ng-template #vacio>
+  <div class="text-center">NO HAY MÚSICA DISPONIBLE</div>
+</ng-template>
+<div class="text-center">
+  <button (click)="volverInicio()">VOLVER A INICIO</button>
+</div>
+
