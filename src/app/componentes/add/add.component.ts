@@ -14,7 +14,7 @@ export class AddComponent implements OnInit {
   cantidad = 0;
   precio = 0;
 
-  idSelect = 0;
+  idSelect : number;
   productoSelect : Producto;
 
   constructor(private service : ProductosService, private router : Router, private route : ActivatedRoute){}
@@ -27,7 +27,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit (){
     this.idSelect = this.route.snapshot.params['id'];
-    if (this.idSelect != 0){
+    if (this.idSelect != null){
       this.productoSelect = this.service.obtainById(this.idSelect);
     }
   }

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { CompraComponent } from './componentes/compra/compra.component';
 import { AddComponent } from './componentes/add/add.component';
-import { ModificarComponent } from './componentes/modificar/modificar.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -14,8 +13,7 @@ import {FormsModule} from "@angular/forms";
     AppComponent,
     HeaderComponent,
     CompraComponent,
-    AddComponent,
-    ModificarComponent
+    AddComponent
   ],
   imports: [
     BrowserModule,
