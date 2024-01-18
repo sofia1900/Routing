@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductosService} from "../../service/productos.service";
 import {Producto} from "../../modelos/producto";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-compra',
@@ -10,13 +11,12 @@ import {Producto} from "../../modelos/producto";
 export class CompraComponent implements OnInit {
 
   productos : Producto[] = [];
-  constructor(private productoService : ProductosService) {}
+
+  constructor(private productoService : ProductosService, private router : Router) {}
 
   ngOnInit () {
     this.productoService.obtainProducts().subscribe( products =>
       this.productos = products
     )
   }
-
-  protected readonly postMessage = postMessage;
 }

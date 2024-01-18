@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let producto of productos">
+      <tr *ngFor="let producto of productos" [routerLink]="['/add', producto.codigo]">
         <td>{{producto.codigo}}</td>
         <td>{{producto.articulo}}</td>
         <td>{{producto.cantidad}}</td>

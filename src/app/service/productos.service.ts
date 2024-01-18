@@ -12,9 +12,21 @@ export class ProductosService {
   obtainProducts () : Observable<Producto[]>{
     return of(this.productos)
   }
-
   addProducto (producto : Producto) {
     producto.codigo = this.productos.length + 1;
     this.productos.push(producto)
+  }
+  modifyProducto (producto : Producto){
+    for(let product of this.productos){
+      if (product.codigo == producto.codigo){
+        producto.articulo = product.articulo;
+        producto.precio = product.precio;
+        producto.cantidad = product.cantidad;
+      }
+    }
+  }
+
+  obtainById (code : number) : Producto{
+    return this.productos[code+1]
   }
 }

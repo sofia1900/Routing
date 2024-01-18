@@ -1,28 +1,57 @@
 <div id="tableAdd">
-  <table class="table-borderless">
-    <thead>
-    <tr>
-      <th>Artículo</th>
-      <th>Cantidad</th>
-      <th>Precio</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        <input type="text" [(ngModel)]="articulo">
-      </td>
-      <td>
-        <input type="text" [(ngModel)]="cantidad">
-      </td>
-      <td>
-        <input type="text" [(ngModel)]="precio">
-      </td>
-      <td>
-        <button class="btn-primary" (click)="addProducto()">Añadir</button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div *ngIf="idSelect == 0 ; else select">
+    <table class="table-borderless">
+      <thead>
+      <tr>
+        <th>Artículo</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="articulo">
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="cantidad">
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="precio">
+        </td>
+        <td>
+          <button class="btn-primary" (click)="addProducto()">Añadir</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #select>
+    <table class="table-borderless">
+      <thead>
+      <tr>
+        <th>Artículo</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="productoSelect.articulo">
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="productoSelect.cantidad">
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="productoSelect.precio">
+        </td>
+        <td>
+          <button class="btn-primary" (click)="modify()">Modificar</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-template>
 </div>
 
