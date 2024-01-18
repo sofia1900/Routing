@@ -27,6 +27,6 @@ export class ProductosService {
   }
 
   obtainById (code : number) : Producto{
-    return this.productos[code+1]
+    return this.productos[code-1]
   }
 }
