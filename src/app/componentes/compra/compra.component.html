@@ -1,0 +1,24 @@
+<div *ngIf="productos.length > 0 ; else vacio">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Artículo</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td>{{producto.codigo}}</td>
+        <td>{{producto.articulo}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.precio}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #vacio>
+  <div class="text-center">La lista de productos disponibles está vacía</div>
+</ng-template>
+
