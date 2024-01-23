@@ -26,7 +26,13 @@ export class ProductosService {
     }
   }
 
-  obtainById (code : number) : Producto{
-    return this.productos[code-1]
+  obtainById (code : number) : Producto {
+    let pos : number = 0;
+    for (let i : number = 0; i < this.productos.length ; i++){
+      if (this.productos[i].codigo == code){
+        pos = i
+      }
+    }
+    return this.productos[pos]
   }
 }
