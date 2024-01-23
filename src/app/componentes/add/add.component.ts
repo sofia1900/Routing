@@ -34,6 +34,11 @@ export class AddComponent implements OnInit {
 
   modify (){
     this.service.modifyProducto(this.productoSelect);
-    this.router.navigate(['']);
+    this.router.navigate([''])
+  }
+
+  delete(){
+    this.service.delete(this.idSelect)
+    this.router.navigate([''])
   }
 }

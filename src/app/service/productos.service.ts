@@ -29,4 +29,8 @@ export class ProductosService {
   obtainById (code : number) : Producto{
     return this.productos[code-1]
   }
+
+  delete(code : number) {
+    this.productos.splice(code-1, 1)
+  }
 }
