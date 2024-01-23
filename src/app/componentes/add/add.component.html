@@ -47,10 +47,10 @@
           <input type="text" [(ngModel)]="productoSelect.precio">
         </td>
         <td>
-          <button class="btn-primary" (click)="modify()">Modificar</button>
+          <button class="btn-primary" (click)="action()">Aceptar</button>
         </td>
         <td>
-          <button class="btn-primary" (click)="delete()">Eliminar</button>
+          <button class="btn-primary" [routerLink]="['']">Inicio</button>
         </td>
       </tr>
       </tbody>

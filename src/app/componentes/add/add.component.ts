@@ -14,31 +14,36 @@ export class AddComponent implements OnInit {
   cantidad = 0;
   precio = 0;
 
-  idSelect : number;
-  productoSelect : Producto;
+  idSelect: number;
+  productoSelect: Producto;
 
-  constructor(private service : ProductosService, private router : Router, private route : ActivatedRoute){}
+  accion: number;
 
-  addProducto () {
-    let producto : Producto = {codigo : 0, articulo: this.articulo, cantidad : this.cantidad, precio : this.precio}
+  constructor(private service: ProductosService, private router: Router, private route: ActivatedRoute) {}
+
+  addProducto() {
+    let producto: Producto = {codigo: 0, articulo: this.articulo, cantidad: this.cantidad, precio: this.precio}
     this.service.addProducto(producto)
     this.router.navigate(['']);
   }
 
-  ngOnInit (){
+  ngOnInit() {
+
+    this.accion = parseInt(this.route.snapshot.queryParams['action']);
+
     this.idSelect = this.route.snapshot.params['id'];
-    if (this.idSelect != null){
+    if (this.idSelect != null) {
       this.productoSelect = this.service.obtainById(this.idSelect);
     }
   }
 
-  modify (){
-    this.service.modifyProducto(this.productoSelect);
-    this.router.navigate([''])
-  }
-
-  delete(){
-    this.service.delete(this.idSelect)
-    this.router.navigate([''])
+  action() {
+    if (this.accion == 1) {
+      this.service.modifyProducto(this.productoSelect);
+      this.router.navigate([''])
+    } else {
+      this.service.delete(this.idSelect)
+      this.router.navigate([''])
+    }
   }
 }

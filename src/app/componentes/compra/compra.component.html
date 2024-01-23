@@ -9,11 +9,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let producto of productos" [routerLink]="['/add', producto.codigo]">
+      <tr *ngFor="let producto of productos">
         <td>{{producto.codigo}}</td>
         <td>{{producto.articulo}}</td>
         <td>{{producto.cantidad}}</td>
         <td>{{producto.precio}}</td>
+        <td><button [routerLink]="['/add', producto.codigo]" [queryParams]="{action:'1'}" >Modificar</button></td>
+        <td><button [routerLink]="['/add', producto.codigo]" [queryParams]="{action:'2'}" >Eliminar</button></td>
       </tr>
     </tbody>
   </table>
