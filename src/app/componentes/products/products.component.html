@@ -1,0 +1,12 @@
+<div style="padding: 20px; background-color: cadetblue ; display: flex ; justify-content: flex-end" >
+  <p><b>Search</b></p>
+  <input type="text" style="width: 200px ; height: 30px">
+</div>
+<div>
+  <div *ngIf="productos.length > 0" style="display: flex; flex-wrap: wrap; flex-direction: row; justify-content: center; align-content: center;">
+    <div *ngFor="let product of productos" style="height: 400px; width: 500px; padding: 50px" [routerLink]="['/detail', product.id]">
+      <img src="{{product.image}}" style="height: 300px ; width: 200px">
+      <p>{{product.title}}</p>
+    </div>
+  </div>
+</div>
