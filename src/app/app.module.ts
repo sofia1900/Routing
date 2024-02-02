@@ -6,21 +6,21 @@ import { AppComponent } from './app.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { ProductsComponent } from './componentes/products/products.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { ProductDetailComponent } from './componentes/product-detail/product-detail.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ProductsModule} from "./products/products.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     CabeceraComponent,
     HomeComponent,
-    ProductsComponent,
-    ProductDetailComponent
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
